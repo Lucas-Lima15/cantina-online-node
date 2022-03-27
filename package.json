@@ -1,0 +1,29 @@
+{
+  "name": "cantina-online-node",
+  "version": "1.0.0",
+  "description": "Baseado no meu projeto de cantina online feito em Laravel, sendo feito dessa vez com node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Lima15/cantina-online-node.git"
+  },
+  "author": "Lucas Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Lima15/cantina-online-node/issues"
+  },
+  "homepage": "https://github.com/Lucas-Lima15/cantina-online-node#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
