@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res, next) => {
-  res.send('Olá mundo');
-});
+const routeSite = require('./routes/site');
+
+app.use(routeSite);
 
 app.listen(3000);
