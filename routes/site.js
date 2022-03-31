@@ -1,9 +1,9 @@
 const express = require('express');
 
+const siteController = require('../controllers/site');
+
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.send('olá mundo');
-});
+router.get('/', siteController.getIndex);
 
 module.exports = router;
