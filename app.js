@@ -1,7 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+const alunoRouter = require('./routes/aluno');
+
+// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use('/aluno', alunoRouter);
+
+app.listen(3000);
