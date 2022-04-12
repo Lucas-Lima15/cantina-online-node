@@ -9,11 +9,10 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to Database"));
 
-const alunoRouter = require("./routes/aluno");
+const studentRouter = require("./routes/student");
 
-// app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use("/aluno", alunoRouter);
+app.use("/aluno", studentRouter);
 
 app.listen(3000);
