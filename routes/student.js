@@ -61,4 +61,13 @@ router.delete("/:id", async (req, res) => {
   return res.json({ message: "Estudante excluido" });
 });
 
+router.post("/search", async (req, res) => {
+  const { name } = req.body
+  const student = await Student.find({name: name});
+
+  return Boolean(student)
+    ? res.json(student)
+    : res.json({ message: "Nenhum estudante encontrado" });
+});
+
 module.exports = router;
