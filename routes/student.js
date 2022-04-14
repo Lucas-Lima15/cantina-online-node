@@ -1,19 +1,29 @@
 const express = require("express");
-const { route } = require("express/lib/application");
 const mongoose = require("mongoose");
-const { findByIdAndRemove } = require("../models/student");
 const Student = require("../models/student");
 
 const router = express.Router();
 
+const ObjectId = mongoose.Types.ObjectId;
+
 router.get("/", async (req, res) => {
-  const students = await Student.find();
-  return res.json(students);
+  try {
+    const students = await Student.find();
+    return res.json(students);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ status: 500, message: "Falha no servidor" });
+  }
 });
 
 router.post("/", async (req, res) => {
-  const student = await Student.create(req.body);
-  return res.json({ message: "Estudante criado" });
+  try {
+    const student = await Student.create(req.body);
+    return res.json({ message: "Estudante criado" });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ status: 500, message: "Falha no servidor" });
+  }
 });
 
 router.get("/:id", async (req, res) => {
