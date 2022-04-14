@@ -62,8 +62,8 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.post("/search", async (req, res) => {
-  const { name } = req.body
-  const student = await Student.find({name: name});
+  const data = req.body;
+  const student = await Student.find(data);
 
   return Boolean(student)
     ? res.json(student)
