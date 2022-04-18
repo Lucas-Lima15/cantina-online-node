@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/Lucas-Lima15/cantina-online-node/issues"
   },
-  "homepage": "https://github.com/Lucas-Lima15/cantina-online-node#readme"
+  "homepage": "https://github.com/Lucas-Lima15/cantina-online-node#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0"
+  }
 }
