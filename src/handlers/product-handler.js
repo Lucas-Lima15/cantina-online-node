@@ -1,13 +1,29 @@
 const ProductService = require("../services/product-service")
 
 class ProductHandler {
-	static getProducts(req, res) {
-		const body = req.body
+	static async getProducts(req, res) {
+		const product = {
+			name: "String",
+			price: 36,
+			type: "String"
+		} 
 
-		const response = ProductService.searchProduct(body)
+		const response = await ProductService.searchProduct(product)
 
 		return res.json({ body: response })
         
+	}
+
+	static postProduct(req, res) {
+		const product = {
+			name: "String",
+			price: "Number",
+			type: "String"
+		} 
+
+		const response = ProductService.save(product)
+
+		return res.json({ body: response })
 	}
 }
 
