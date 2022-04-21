@@ -1,16 +1,15 @@
-const Product = require("../schemas/user-schema")
+const Product = require("../models/product")
 
 class ProductService {
-	static async searchProduct(product) {
-		const prod = new Product(product)
-		await prod.save(product)
-		return Product.find()
+	static async searchProduct() {
+		const products = await Product.find()
+		return products.length ? products : "Nenhum produto cadastrado"
 	}
 
-	static async save(product) {
-		const prod = new Product(product)
-		await prod.save(product)
-		return prod
+	static async save(prod) {
+		const product = new Product(prod)
+		await product.save(product)
+		return product
 	}
 }
 

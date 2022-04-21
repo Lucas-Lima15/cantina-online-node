@@ -9,6 +9,9 @@ db.once("open", function() {
 	console.log("Connected successfully")
 })
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 const ProductRouter = require("./src/routes/product-routes")
 
 app.use("/product", ProductRouter)
