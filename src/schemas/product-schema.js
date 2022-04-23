@@ -3,14 +3,14 @@ const mongoose = require("mongoose")
 module.exports = mongoose.Schema({
 	name: {
 		type: String,
-		default: null
+		required: true
 	},
 	price: {
 		type: Number,
-		default: null
+		required: true
 	},
 	category: {
 		type: String,
-		default: null
+		required: true
 	},
 })
