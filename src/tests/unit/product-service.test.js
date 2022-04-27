@@ -27,4 +27,12 @@ describe("ProductService", () => {
 
 		expect(JSON.stringify(products[0])).toBe(JSON.stringify(productMock))
 	})
+
+	it("Should save product in database", async () => {
+		await ProductService.save(productMock)
+
+		const product = await Product.findById(productMock._id).exec()
+
+		expect(JSON.stringify(product)).toBe(JSON.stringify(productMock))
+	})
 })
